@@ -10,8 +10,9 @@ body {
 }
 
 .container{
+	font-size: 14px;
 	padding: 20px;
-	width: 300px;
+	width: 280px;
 	margin: 0 auto;
 	margin-top: 40px;
 	background: white;
@@ -20,6 +21,7 @@ body {
 
 form {
 	display: inline-block;
+	
 }
 
 input{
@@ -28,26 +30,36 @@ input{
 
 #button{
 	display: inline-block;
-	background-color:#fc999b;
+	background-color:#fd4f3b;
 	color:#ffffff;
 	border-radius: 5px;
 	text-align:center;
 	margin-top:2px;
+	margin-left: 8px;
 	padding: 5px 15px;
 }
 
 #button:hover{
 	cursor: pointer;
-	opacity: .8;
+	opacity: .6;
 }
 
-ol {padding-left: 20px;}
+ol {
+	padding-left: 20px;
+}
 
-ol li {padding: 5px;color:#000;}
+ol li {
+	padding: 5px;
+	color:#000;
+}
 
-ol li:nth-child(even){background: #dfdfdf;}
+ol li:nth-child(even){
+	background: #dfdfdf;
+}
 
-.strike{text-decoration: line-through;}
+.strike{
+	text-decoration: line-through;
+}
 
 li:hover{
 	cursor: pointer;

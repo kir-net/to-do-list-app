@@ -1,39 +1,42 @@
 function newItem(){
 
-//javascript
-//1. Adding a new item to the list of items: 
-   let li = document.createElement("li");
-   let inputValue = document.getElementById("input").value;
-   let text = document.createTextNode(inputValue);
-   li.appendChild(text);
+    
+    // create list
+    let li = $('<li></li>');
+    // read user input
+    let inputText = $('#input').val();
+    // append input to list
+    li.append(inputText);
 
-   if (inputValue === '') {
-     alert("You must write something!");
-   } else {
-     let list = document.querySelector('#list');
-     list.appendChild(li);
-   }
+    // display warning if user did not enter anything
+    if (inputText === '') {
+        alert("You must write something!");
+    } 
+    else {
+        $('#list').append(li);
+    }
 
- //2. Crossing out an item from the list of items:
-   function crossOut() {
- 		li.classList.toggle("strike");
- 	}
+    // cross an item out on double click:
+    function crossOut() {
+        li.toggleClass("strike");
+    }
+    li.on("dblclick", function crossOut() {
+        li.toggleClass("strike");
+    });
 
- 	li.addEventListener("dblclick",crossOut);
+    // create delete button
+    let crossOutButton = $('<crossOutButton></crossOutButton>');
+    // mark delete button with 'X'
+    crossOutButton.append(document.createTextNode('X'));
+    li.append(crossOutButton);
+    // function: remove item from list
+    crossOutButton.on("click", deleteListItem);
+    function deleteListItem(){
+        li.addClass("delete")
+    }
 
- //3(i). Adding the delete button "X": 
-   let crossOutButton = document.createElement("crossOutButton");
- 	crossOutButton.appendChild(document.createTextNode("X"));
- 	li.appendChild(crossOutButton);
-
- 	crossOutButton.addEventListener("click", deleteListItem);
- //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
-   function deleteListItem(){
- 		li.classList.add("delete")
- 	}
- // 4. Reordering the items: 
-   $('#list').sortable();
-
+    // Reorder items
+    $('#list').sortable();
 }
 
  
