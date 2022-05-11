@@ -50,10 +50,6 @@ ol li {
   color: #000;
 }
 
-ol li:nth-child(even) {
-  background: #dfdfdf;
-}
-
 .strike {
   text-decoration: line-through;
 }
